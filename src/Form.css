@@ -1,0 +1,61 @@
+.outerContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding:30px;
+    background-color: #356FAD;
+    border-radius: 20px;
+}
+.description{
+    width: 100%;
+    margin-top:20px;
+    display: flex;
+    flex-direction: column;
+}
+.radioButtons{
+    width: 100%;
+    display:'flex';
+    align-items: flex-start;
+    margin-top: 15px;
+}
+label{
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.vat{
+    width: 100%;
+    margin-top:20px;
+    margin-bottom:15px;
+}
+.selectContainer{
+    margin-top:10px;
+    margin-bottom:15px;
+}
+.nettoContainer{
+    display: flex;
+    flex-direction: column;
+}
+select{
+    margin-right: 20px;
+}
+.priceBrutto{
+    margin-bottom:10px
+}
+.submitFormButton{
+    width: 100%;
+    margin-top:20px;
+    padding:8px 16px;
+    background-color: rgb(239, 171, 45);
+    border-radius: 10px;
+}
+.submitFormButton:hover{
+    background-color: orange;
+}

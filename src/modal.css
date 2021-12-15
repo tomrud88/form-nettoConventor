@@ -1,0 +1,59 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.75);
+  }
+  
+  .modal {
+    background-color: rgb(10, 133, 10);
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    position: fixed;
+    top: 30vh;
+    left: 30%;
+    width: 40%;
+    z-index: 100;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .modalError {
+    background-color:white;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    position: fixed;
+    color:red;
+    top: 30vh;
+    left: 30%;
+    width: 40%;
+    z-index: 100;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .content {
+    padding: 1rem;
+    font-size: 25px;
+  }
+  .closeButton{
+      width: 100%;
+      border-radius:0;
+      font-size:20px;
+      padding:8px 16px;
+      background-color: rgb(245, 162, 6);
+  }
+  .closeButton:hover{
+      background-color: rgb(198, 130, 5);
+  }
+  footer{
+      width: 100%;
+  }
