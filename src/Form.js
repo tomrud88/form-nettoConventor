@@ -19,25 +19,32 @@ function Form() {
   const [didSubmit, setDidSubmit] = useState(false);
   const [modalInfo, setModalInfo] = useState();
 
-  const regexNetto = /^[0-9]*(.|,)?[0-9]*$/;
-  const regex = /[A-Z]+$/i;
-
+  
   const radioIsInvalid = radio === "" && radioTouched;
   const textAreaInputNotValid =
     (textArea.length < 1 && textAreaTouched) || textArea.length > 1;
   const selectedValueNotValid =
-    selectedValue === "Choose VAT" && selectedValueTouched;
+    selectedValue === ("Choose VAT" || "") && selectedValueTouched;
 
   console.log(textAreaIsValid);
+  console.log(textArea.length)
+  console.log(selectedValueIsValid);
+  console.log(selectedValue)
 
   useEffect(() => {
-    if (selectedValue !== "Choose VAT") {
+    if (selectedValue !== ("Choose VAT" || "")) {
       setSelectedValueIsValid(true);
+    } else {
+      setSelectedValueIsValid(false)
     }
+    
 
     if (textArea.length > 0) {
       setTextAreaIsValid(true);
+    } else {
+      setTextAreaIsValid(false);
     }
+
 
     if (radio === "yes" || "no") {
       setRadioValidator(true);
@@ -54,12 +61,16 @@ function Form() {
     textArea,
     radio,
     radioTouched,
+    textArea.length,
     textAreaTouched,
     selectedValueTouched,
     selectedValueIsValid,
   ]);
 
-  console.log(textArea);
+
+  const regexNetto = /^[0-9]*(.|,)?[0-9]*$/;
+  const regex = /[A-Z]+$/i;
+
 
   const nettoSetter = (e) => {
     if (!e.target.value.match(regexNetto) || e.target.value.match(regex)) {
@@ -72,7 +83,6 @@ function Form() {
 
   const selectedValueHandler = (e) => {
     setSelectedValue(e.target.value);
-    console.log(selectedValue);
   };
 
   const radioButtonHandler = (event) => {
@@ -94,10 +104,12 @@ function Form() {
 
     if (textArea.length > 0) {
       setTextAreaIsValid(true);
-    }
+    } 
 
     if (selectedValue !== "Choose VAT") {
       setSelectedValueIsValid(true);
+    } else {
+      setSelectedValueIsValid(false)
     }
 
     const sendData = {
