@@ -26,10 +26,6 @@ function Form() {
   const selectedValueNotValid =
     selectedValue === ("Choose VAT" || "") && selectedValueTouched;
 
-  console.log(textAreaIsValid);
-  console.log(textArea.length)
-  console.log(selectedValueIsValid);
-  console.log(selectedValue)
 
   useEffect(() => {
     if (selectedValue !== ("Choose VAT" || "")) {
@@ -38,13 +34,11 @@ function Form() {
       setSelectedValueIsValid(false)
     }
     
-
     if (textArea.length > 0) {
       setTextAreaIsValid(true);
     } else {
       setTextAreaIsValid(false);
     }
-
 
     if (radio === "yes" || "no") {
       setRadioValidator(true);
@@ -122,14 +116,8 @@ function Form() {
     setTextAreaTouched(true);
     setSelectedValueTouched(true);
 
-    console.log(selectedValueIsValid);
-    console.log(radioValidator);
-    console.log(textAreaIsValid);
-
     const formIsValid =
       selectedValueIsValid && radioValidator && textAreaIsValid;
-
-    console.log(formIsValid);
 
     if (formIsValid) {
       fetch(
@@ -141,7 +129,6 @@ function Form() {
       )
         .then((response) => response.json())
         .then((sendData) => {
-          console.log("success:", sendData);
           setModalInfo("Congratulations! You have send the form.");
         })
         .catch((error) => {
